@@ -1,0 +1,1735 @@
+#Geting input for array
+
+arr=[]
+elements=int(input("enter the no of elements:"))
+for i in range(elements):
+    data=int(input(f"enter the element {i+1}:"))
+    if data%2==0:
+     	arr.append(data)
+print(arr)
+
+#output
+
+enter the no of elements:5
+enter the element 1:10
+enter the element 2:20
+enter the element 3:30
+enter the element 4:40
+enter the element 5:50
+[10, 20, 30, 40, 50]
+________________________________________________________
+
+#Bubble Sort
+
+def bubble_sort(arr):
+    n=len(arr)
+    for i in range(n-1):
+        for j in range(n-1):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+    return arr
+arr=list(map(int,input("Enter n number to sort: ").split()))
+print(bubble_sort(arr))
+
+#Output
+
+Enter n number to sort: 50 40 30 20 10
+[10, 20, 30, 40, 50]
+
+__________________________________________________________
+
+#matrix row and column manipulation
+
+mat=[[1,1,1,1],[2,2,2,2],[3,3,3,3],[4,4,4,4]]
+for row in mat:
+    for num in row:
+        print(num,end=" ")
+    print()
+rows=len(mat)
+cols=len(mat[0])
+tMat=[[0 for _ in range(rows)]for _ in range(cols)]
+for i in range(rows):
+    for j in range(cols):
+        tMat[j][i]=mat[i][j]
+print("\nAfter Changed row to column\n")
+for row in tMat:
+    for elem in row:
+        print(elem,end=' ')
+    print()
+
+# Output
+1 1 1 1 
+2 2 2 2 
+3 3 3 3 
+4 4 4 4 
+
+After Changed row to column
+
+1 2 3 4 
+1 2 3 4 
+1 2 3 4 
+1 2 3 4 
+
+_______________________________________________________
+
+# Operation in array
+
+x=[1,2,3,4]
+y=[3,5]
+x.extend(y)
+print(x)
+
+x.insert(1,5)
+print(x)
+y=x.count(5)
+print(y)
+
+#Output
+
+[1, 2, 3, 4, 3, 5]
+[1, 5, 2, 3, 4, 3, 5]
+2
+
+________________________________________________________
+
+#Counting Tires in parking
+
+total=600
+cars=100
+balance=total-(cars*4)
+bikes=balance/2
+print("total number of cares:",cars)
+print("total number of bikes:",bikes)
+
+# Output
+
+total number of cares: 100
+total number of bikes: 100.0
+
+_________________________________________________________
+
+# Class, Object and Methods
+
+class car:
+    def __init__(self,arr1,arr2):
+        self.arr01=arr1
+        self.arr02=arr2
+    def addi(self):
+        z=self.arr01+self.arr02
+        print(z)
+x=[1,2,3]
+y=[4,5,6]
+cars= car(x,y)
+cars.addi()
+
+#Output
+
+[1, 2, 3, 4, 5, 6]
+
+__________________________________________________________
+
+# Find odd and even by splitting integer
+
+class number:
+    def __init__(self,data):
+         self.data=data
+    def check(self):
+        firstnum = self.data// 100
+        lastnum = self.data% 100
+	print("\nUsing math operation\n")
+        if firstnum % 2 == 0:
+            print("First 2 digit number", firstnum, "is Even")
+        else:
+            print("First 2 digit number", firstnum, "is Odd")
+        if lastnum % 2 == 0:
+            print("Last 2 digit number", lastnum, "is Even")
+        else:
+            print("Last 2 digit number", lastnum, "is Odd")
+    def stringnum(self):
+        numstring=str(self.data)
+        firstnum=int(numstring[:2])
+        lastnum=int(numstring[2:])
+	print("\nUsing string slicing\n")
+        if firstnum % 2 == 0:
+            print("First 2 digit number", firstnum, "is Even")
+        else:
+            print("First 2 digit number", firstnum, "is Odd")
+        if lastnum % 2 == 0:
+            print("Last 2 digit number", lastnum, "is Even")
+        else:
+            print("Last 2 digit number", lastnum, "is Odd")
+obj = number(5562)
+obj.check()
+obj.stringnum()
+
+# Output
+
+Using math operation
+
+First 2 digit number 55 is Odd
+Last 2 digit number 62 is Even
+
+Using string slicing
+
+First 2 digit number 55 is Odd
+Last 2 digit number 62 is Even
+
+_________________________________________________________
+
+#Accessing mulitiple class using For loop
+
+class mca:
+    def student(self):
+        print("deva")
+class bca:
+    def student(self):
+        print("bala")
+class msc:
+    def student(self):
+        print("suriya")
+smvc = [mca(),bca(),msc()]
+for clg in smvc:
+    clg.student()
+
+#Output
+
+deva
+bala
+suriya
+
+________________________________________________________
+
+#Find common numbers in array from different class
+
+class MCA:
+    def values(self):
+        return [10, 20, 30, 40]
+class BCA:
+    def values(self):
+        return [50, 20, 30, 70]
+class MSC:
+    def values(self):
+        return [30, 20, 90, 100]
+clg = [MCA(), BCA(), MSC()]
+list1= []
+
+for obj in clg:
+    list1.append(obj.values())
+common = set(list1[0])
+
+for lst in list1[1:]:
+    common = common.intersection(lst)
+print("common value in the lists among all class:", list(common))
+
+#Output
+common value in the lists among all class: [20, 30]
+
+________________________________________________________________
+
+# Finding unique pairs
+
+set1 = {7,2}
+set2 = {8,2}
+pairs = []
+for i in set1:
+    for j in set2:
+        pairs.append((i, j))
+for j in set2:
+    for i in set1:
+        pairs.append((j, i))
+print(pairs)
+
+# Output
+
+[(2, 8), (2, 2), (7, 8), (7, 2), (8, 2), (8, 7), (2, 2), (2, 7)]
+
+_________________________________________________________________
+
+# Banking Program using class
+
+class BankAccount:
+    def __init__(self, account_holder, balance=0.0):
+        self.account_holder = account_holder
+        self.balance = balance
+
+    def deposit(self,amount):
+        if amount>0:
+            self.balance+=amount
+            print(f"deposite ${amount:.2f}. New balance: ${self.balance:.2f}")
+        return self.balance
+    def withdraw(self,amount):
+        if 0<amount <= self.balance:
+            self.balance -= amount
+            print(f"Withdrawn ${amount:.2f}. new balance: ${self.balance:.2f}")
+        else:
+            print("Inadequate Balance or invalid amount")
+        return self.balance
+    
+class SavingsAccount(BankAccount):
+    def __init__(self, account_holder, balance=0.0, interest_rate=0.02):
+        self.account_holder = account_holder
+        super().__init__(account_holder, balance)
+        self.interest_rate = interest_rate
+        
+    def add_interest(self):
+        interest = self.balance * self.interest_rate
+        self.balance += interest
+        print(f"added ${interest:.2f} interest. new balance: ${self.balance:.2f}")
+        
+class CheckingAccount(BankAccount):
+    def __init__(self, account_holder, balance=0.0, overdraft_limit=500):
+        super().__init__(account_holder, balance)
+        self.overdraft_limit = overdraft_limit
+
+    def withdraw(self, amount):
+        if amount <= self.balance + self.overdraft_limit:
+            self.balance -= amount
+            print(f"Withdrawn ${amount:.2f} (overdraft active). new balance: $ {self.balance:.2f}")
+        else:
+            print("transaction declined. Overdraft Limit Exceeded")
+        return self.balance
+
+if __name__ == "__main__":
+    print("=== Savings Account ===")
+    s = SavingsAccount("Deva", 1000.0)
+    s.deposit(500)
+    s.add_interest()
+
+    print("\n=== Checking Account ===")
+    c = CheckingAccount("Bala", 100.0)
+    c.deposit(500)
+    c.withdraw(500)
+
+#Output
+
+=== Savings Account ===
+deposite $500.00. New balance: $1500.00
+added $30.00 interest. new balance: $1530.00
+
+=== Checking Account ===
+deposite $500.00. New balance: $600.00
+Withdrawn $500.00 (overdraft active). new balance: $ 100.00
+
+___________________________________________________________
+
+# Multiple Inheritence
+
+class father:
+    def demo1(self):
+        self.x="Son"
+        print("Magesh")
+class mother:
+    def demo2(self):
+        self.y="Suriya"
+        print("Balambigai")
+class daughter(father,mother):
+    def demo3(self):
+        print(self.x,self.y)
+obj = daughter()
+obj.demo1()
+obj.demo2()
+obj.demo3()
+
+#Output
+
+Magesh
+Balambigai
+Son Suriya
+
+________________________________________________________
+
+# Multiple Inheritence 2
+
+class Student:
+    def student_details(self):
+        self.name = input("Enter Student Name: ")
+        self.rollno = input("Enter Roll Number: ")
+
+
+class Sports:
+    def sports_details(self):
+        self.game = input("Enter Game Name: ")
+        self.score = int(input("Enter Score: "))
+
+
+class SportsDay(Student, Sports):
+    def display(self):
+        print("\n Sports Day Details ")
+        print("Name :", self.name)
+        print("Roll No :", self.rollno)
+        print("Game :", self.game)
+        print("Score :", self.score)
+        
+s = SportsDay()
+s.student_details()
+s.sports_details()
+s.display()
+
+# Output
+
+Enter Student Name: Suriya
+Enter Roll Number: 25PMC162
+Enter Game Name: Cricket
+Enter Score: 50
+
+ Sports Day Details 
+Name : Suriya
+Roll No : 25PMC162
+Game : Cricket
+Score : 50
+
+____________________________________________________
+
+# Multilevel Inheritence
+
+class grandpa:
+    def __init__ (self,grandpaname):
+        self.grandpaname=grandpaname
+class father(grandpa):
+    def __init__(self,grandpaname,fathername):
+        grandpa.__init__(self,grandpaname)
+        self.fathername=fathername
+class child(father):
+    def __init__(self,grandpaname,fathername,sonname):
+        father.__init__(self,grandpaname,fathername)
+        self.sonname=sonname
+    def display(self):
+        print(self.sonname,self.fathername,self.grandpaname)
+obj = child("deva","dinesh","kumar")
+obj.display()
+
+#Output
+
+kumar dinesh deva
+
+____________________________________________________
+
+# Getting different types of input
+
+integer=int(input("enter a integer: "))
+f=float(input("enter float value: "))
+s=input("enter a string: ")
+value = input("Enter True or False: ")
+flag = value == True
+num = complex(input("Enter a complex number: "))
+numbers = list(map(int, input("Enter numbers: ").split()))
+print(integer)
+print(f)
+print(s)
+print(flag)
+print(num)
+print(numbers)
+
+#output
+
+enter a integer: 2
+enter float value: 2.22
+enter a string: suriya
+Enter True or False: True
+Enter a complex number: 5+5j
+Enter numbers: 50 40 20 10 
+2
+2.22
+suriya
+False
+(5+5j)
+[50, 40, 20, 10]
+
+___________________________________________________________
+
+
+# Encapsulation (private)
+
+class student:
+    def __init__(self,name,number):
+        self.name=name
+        self.__number=number
+std = student("Dinesh",7339791231)
+print(std.name)
+print(std.number)
+
+#Output
+
+Dinesh
+ERROR!
+Traceback (most recent call last):
+  File "<main.py>", line 7, in <module>
+AttributeError: 'student' object has no attribute 'number'
+
+_____________________________________________________________
+
+# Reassign the private attribute
+
+class student:
+    def __init__(self,name,number):
+        self.name=name #public
+        self.__number=number #private
+    def demo(self):
+        self.__number=735428367
+std = student("Dinesh",7339791231)
+print(std.name)
+print(std.number)
+
+#Output
+
+Dinesh
+ERROR!
+Traceback (most recent call last):
+  File "<main.py>", line 9, in <module>
+AttributeError: 'student' object has no attribute 'number'
+
+_________________________________________________________
+
+# Protected attribute
+
+class student:
+    def __init__(self,name,number):
+        self.name=name
+        self._number=number #protected
+class clg(student):
+    def data(self):
+        print(self._number)    
+std = clg("Dinesh",7339791231)
+print(std.name)
+std.data()
+
+#Output
+
+Dinesh
+7339791231
+
+________________________________________________________
+
+#Even numbers by using class
+
+class EvenNumber:
+    def get_numbers(self):
+        self.numbers = list(map(int, input("Enter numbers separated by space:  ").split()))
+
+    def print_even(self):
+        print("Even numbers are:")
+        for num in self.numbers:
+            if num % 2 == 0:
+                print(num, end=" ")
+obj = EvenNumber()
+obj.get_numbers()
+obj.print_even()
+
+#Output
+
+Enter numbers separated by space:  25 20 15 10 5 2
+Even numbers are:
+20 10 2 
+
+__________________________________________________________
+
+#Abstraction
+
+from abc import ABC, abstractmethod
+class car(ABC):
+    def data(self):
+        print("say hello")
+    def xyz(self):
+        print("10")
+class BMW(car):
+    def data(self):
+        self.__x=10
+        return "say hai"
+    def xyz(self):
+        print("20")
+bmw=BMW()
+print(bmw.data())
+bmw.xyz()
+
+#Output
+
+say hai
+20
+
+__________________________________________________________
+
+# find duplicate in array
+
+num =int(input("Enter the no of element: "))
+arr=[]
+dup=[]
+for i in range(num):
+	arr.append(input(f"Enter the data {i+1}: "))
+
+value=[]
+for i in arr:
+    if i not in dup:
+        dup.append(i)
+    elif i not in value:
+        value.append(i)
+print(arr)
+print(dup)
+
+#output
+
+Enter the no of element: 5
+Enter the data 1:5
+Enter the data 2:6
+Enter the data 3:5
+Enter the data 4:6
+Enter the data 5:1
+['5', '6', '5', '6', '1']
+['5', '6', '1']
+
+__________________________________________________________
+
+# creating matrix
+
+rows = int(input("Enter no.of rows: "))
+cols = int(input("Enter no.of columns: "))
+
+A = []
+B = []
+C = []
+
+print("Enter Matrix A:")
+for i in range(rows):
+    row = list(map(int,input(f"Enter number for row {i+1}: ").split()))
+    A.append(row)
+
+print("Enter Matrix B:")
+for i in range(rows):
+    row = list(map(int,input(f"Enter number for row {i+1}: ").split()))
+    B.append(row)
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(A[i][j] + B[i][j])
+    C.append(row)
+
+print("Result Matrix:")
+for row in C:
+	for num in row:
+    		print(num, end=" ")
+	print()
+
+#Output
+
+Enter no.of rows: 3
+Enter no.of columns: 3
+Enter Matrix A:
+Enter number for row 1: 4 5 6
+Enter number for row 2: 4 8 5 
+Enter number for row 3: 9 1 4
+Enter Matrix B:
+Enter number for row 1: 7 5 3
+Enter number for row 2: 9 5 1
+Enter number for row 3: 7 5 2
+Result Matrix:
+11 10 9 
+13 13 6 
+16 6 6 
+
+___________________________________________________________
+
+# Array manipulation 1
+
+#a=list(map(int,input().split()))
+#b=list(map(int,input().split()))
+
+a=[4,1,3,3,2]
+a.sort()
+b=[3,1]
+res=[]
+for i in b:
+    if i in b and i not in res:
+        for j in a:
+                if i == j:
+                    res.append(i)
+for i in a:
+    if i not in res:
+        res.append(i)
+print(res)               # [3,3,1,2,4]
+
+#Output
+
+[3, 3, 1, 2, 4]
+
+__________________________________________________________
+
+# Array manipulation 2
+
+
+x=[4,2,8]
+y=[1,7,6]
+for i in range(len(y)):
+    idx=y[i]
+    if idx>len(x):
+        print(f"{y[i]} out of index")
+    else:
+        x.insert(idx,y[i])
+print(x)
+
+#Output
+
+7 out of index
+6 out of index
+[4, 1, 2, 8]
+
+___________________________________________________________
+
+# Array manipulation 2
+
+x=[8,6,3,4]
+y=[1,4,2]
+z=[8,4,2]
+j=0
+for i in y:
+    if i<len(x):
+        x[i]+=z[j]
+    else:
+        print(f"{i} is out of index")
+    j+=1
+print(x)
+
+#output
+
+4 is out of index
+[8, 14, 5, 4]
+
+______________________________________________________________
+
+# Find unique pairs
+
+d1=(7,2)
+d2=(8,2)
+res=[]
+for i in range(len(d1)):
+    for j in range(len(d2)):
+        if [d1[i],d2[j]] not in res:
+            res.append([d1[i],d2[j]])
+        if [d1[j],d2[i]] not in res:
+            res.append([d1[j],d2[i]])
+        if [d2[i],d1[j]] not in res:
+            res.append([d2[i],d1[j]])
+print(res)				
+
+#Output
+
+[[7, 8], [8, 7], [7, 2], [2, 8], [8, 2], [2, 7], [2, 2]]
+
+______________________________________________________________
+
+# Multiplication of row and column of matrix
+
+
+r = int(input("Enter rows: "))
+c = int(input("Enter columns: "))
+
+a = []
+print("Enter First Matrix:")
+for i in range(r):
+    row = list(map(int,input(f"Enter number for row {i+1}: ").split()))
+    a.append(row)
+
+b = []
+print("Enter Second Matrix:")
+for i in range(r):
+    row = list(map(int,input(f"Enter number for row {i+1}: ").split()))
+    b.append(row)
+
+print("Multiplication:")
+for i in range(r):
+    for j in range(c):
+        s = 0
+        for k in range(c):
+            s = s + a[i][k] * b[k][j]
+        print(s, end=" ")
+    print()
+
+#Output
+
+Enter rows: 3
+Enter columns: 3
+Enter First Matrix:
+Enter number for row 1: 4 5 6
+Enter number for row 2: 5 2 1
+Enter number for row 3: 4 5 2
+Enter Second Matrix:
+Enter number for row 1: 7 5 3
+Enter number for row 2: 8 4 2
+Enter number for row 3: 4 9 1
+Multiplication:
+92 94 28 
+55 42 20 
+76 58 24 
+
+_________________________________________________________________
+
+# addition of row and column of matrix
+
+mat1=[[1,2,3],[3,2,1],[3,2,1]]
+mat2=[[1,2,3],[3,2,1],[3,2,1]]
+print("Matrix 1")
+for row in mat1:
+    for num in row:
+        print(num,end=" ")
+    print()
+print("Matrix 2")
+for row in mat2:
+    for num in row:
+        print(num,end=" ")
+    print()
+res=[]
+
+for i in range(len(mat1)):
+    row=[]
+    for j in range(len(mat2)):
+        row.append(mat1[i][j]+mat2[j][i])
+    res.append(row)
+print("Matrix addition")
+for mat in res:
+    for num in mat:
+        print(num,end=" ")
+    print()			
+
+#Output
+
+Matrix 1
+1 2 3 
+3 2 1 
+3 2 1 
+Matrix 2
+1 2 3 
+3 2 1 
+3 2 1 
+Matrix addition
+2 5 6 
+5 4 3 
+6 3 2  
+
+___________________________________________________________
+
+# Remove empty tuple from the list
+
+lists=[(4,2),(3,4),(),(5,6),(7,)]
+a=[num for num in lists if num]
+print(a)			
+
+# Output
+
+[(4, 2), (3, 4), (5, 6), (7,)]
+
+__________________________________________________________
+
+# merge sub list column to integer
+
+lists=[[3,1],[5,6],[5]]
+max_c=max(len(sub_list) for sub_list in lists)
+res=[]
+for i in range(max_c):
+    temp=""
+    for sub_num in lists:
+        if i <len(sub_num):
+            temp+=str(sub_num[i])
+    res.append(temp)
+print(res)			
+
+#Output
+
+['355', '16']
+
+_____________________________________________________________
+
+# merge sub list column to integer
+
+matrix = [
+    [4, 2],
+    [9, 7, 3],
+    [1]
+]
+max_col=max(len(sub_arr) for sub_arr in matrix)
+res=[]
+flag=True
+for i in range(max_col):
+    temp=""
+    if flag:
+        for sub_list in matrix:
+            if i<len(sub_list):
+                temp+=str(sub_list[i])
+        flag=False
+    else:
+        for sub_list in reversed(matrix):
+            if i<len(sub_list):
+                temp+=str(sub_list[i])
+        flag=True
+    res.append(temp)
+print(res)			
+
+#Output
+
+['491', '72', '3']
+
+_________________________________________________________
+
+# Find the peak in list
+
+arr = [1, 3, 20, 4, 1, 0, 5, 2]
+n=len(arr)
+res=[]
+for i in range(n):
+    if i == 0:
+        if arr[i]>arr[i+1]:
+            res.append(i)
+    elif i==n-1:
+        if arr[i]>arr[i-1]:
+            res.append(i)
+    else:
+        if arr[i-1]<arr[i] and arr[i]>arr[i+1]:
+            res.append(i)
+print(res)			
+
+#Output
+
+[2, 6]
+
+__________________________________________________________
+
+# Array manipulation (move the non-zero index first)
+
+arr = [0, 1, 0, 3, 12]
+idx=0
+for i in range(len(arr)):
+    if arr[i] != 0:
+         arr[pos]=arr[i]
+         idx+=1
+for i in range(idx,len(arr)):
+    arr[i]=0
+print(arr)			
+
+#Output
+
+[1, 3, 12, 0, 0]
+
+__________________________________________________________
+
+# Move the unique number
+
+arr = [1, 1, 2, 2, 3, 4, 4]
+pos=0
+idx=1
+for i in range(1,len(arr)):
+    if arr[i]!=arr[i-1]:
+        arr[idx]=arr[i]
+        idx+=1
+print(arr)			
+
+#Output
+
+[1, 2, 3, 4, 3, 4, 4]
+
+__________________________________________________________
+
+# string slicing
+
+name="datastructurealgorithm"
+i=6
+res=name[:6]+name[7:]
+print(res)			
+
+#Output
+
+datastucturealgorithm
+
+___________________________________________________________
+
+# Find word in sentence
+
+name="data structure algorithm"
+sub="data"
+lists=list(map(str,name.split()))
+flag=None
+for word in lists:
+    if sub==word:
+        flag=True
+        break
+if flag:
+    print(f"{sub} word is Found")
+else:
+    print(f"{sub} word is Not found")		
+
+#Output
+
+data word is Found
+
+_____________________________________________________________
+
+# Find integer in string
+
+string="suriya123deva758dnfghsf"
+res=0
+for i in string:
+    if i.isdigit():
+        res=res*10+int(i)
+print(res)			
+
+#Output
+
+123758
+
+______________________________________________________________
+
+# Find integer in string using regex
+
+import re
+
+text="suriya123deva758dnfghsf"
+
+match = [ int(i) for i in re.findall("[0-9]", text)]
+
+print(match)			
+
+#Output
+
+[1, 2, 3, 7, 5, 8]
+
+______________________________________________________________
+
+# Linked list
+
+class Node:
+    def __init__ (self,data):
+        self.data=data
+        self.next=None
+head=Node(0)
+head.next=Node(1)
+head.next.next=Node(2)
+
+current=head
+while current:
+    print(current.data,end="=>")
+    current=current.next
+print("none")
+
+
+class node:
+    def __init__ (self,data):
+        self.data=data
+        self.next=None
+node1=node(0)
+node2=node(1)
+node3=node(2)
+node4=node(3)
+
+node1.next=node2
+node2.next=node3
+node3.next=node4
+
+head=node1
+current=head
+while current:
+    print(current.data,end="=>")
+    current=current.next
+print("none")
+
+#Output
+
+0=>1=>2=>none
+0=>1=>2=>3=>none
+
+____________________________________________________________
+
+# operations in linked list
+
+
+class node:
+    def __init__ (self,data):
+        self.data=data
+        self.next=None
+
+def insertAtStart(head,data):
+    new_node=node(data)
+    new_node.next=head
+    return new_node
+
+def insertAtEnd(head,data):
+    new_node=node(data)
+    if head is None:
+        return new-node
+    current=head
+    while current.next:
+        current=current.next
+    current.next=new_node
+    return head
+
+def deleteAtStart(head):
+    if head is None:
+        print("Error: singly inked list is empty")
+        return None
+    new_head=head.next
+    del head
+    return new_head
+
+def deleteAtEnd(head):
+    if head is None:
+        print("Error: singly inked list is empty")
+        return None
+    if head.next is None:
+        return None
+
+    current = head
+
+    while current.next.next is not None:
+        current = current.next
+
+    current.next = None
+    return head
+    
+def search(head, key):
+    temp = head
+    pos = 1
+
+    while temp:
+        if temp.data == key:
+            print("Element Found at Position", pos)
+            return
+
+        temp = temp.next
+        pos += 1
+
+    print("Element Not Found")
+
+def traverse(head):
+    current = head
+    while current:
+        print(current.data,end="=>")
+        current=current.next
+    print("none")
+
+head=None
+head=insertAtStart(head,4)
+head=insertAtStart(head,3)
+head=insertAtStart(head,2)
+head=insertAtStart(head,1)
+
+key = int(input("Enter element to search: "))
+search(head, key)
+
+#Output
+
+Enter element to search: 4
+Element Found at Position 4
+
+Enter element to search: 8
+Element Not Found
+
+_____________________________________________________________
+
+# reverse a Linked list
+
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class linkedlist:
+    def __init__(self):
+        self.head=None
+    def push(self,new_data):
+        new_node=node(new_data)
+        new_node.next=self.head
+        self.head=new_node
+    def printlist(self):
+        current=self.head
+        while(current):
+            print(current.data,end=" ")
+            current=current.next
+ll=linkedlist()
+ll.push(20)
+ll.push(4)
+ll.push(15)
+ll.push(85)
+
+print("given linked list")
+ll.printlist()
+
+prev=None
+curr=ll.head
+while(curr is not None):
+    next=curr.next
+    curr.next=prev
+    prev=curr
+    curr=next
+ll.head=prev
+
+print("\n Reversed linked list:")
+ll.printlist()
+
+#Output
+
+given linked list
+85 15 4 20 
+Reversed linked list:
+20 4 15 85 
+
+____________________________________________________________________
+
+# Doubly linked list
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+head = Node(10)
+head.next = Node(20)
+head.next.prev = head
+
+head.next.next = Node(30)
+head.next.next.prev = head.next
+
+head.next.next.next = Node(40)
+head.next.next.next.prev = head.next.next
+
+new_node = Node(50)
+current = head
+
+while current.next is not None:
+    current = current.next
+current.next = new_node
+new_node.prev = current
+
+head=head.next
+head.prev=None
+
+current = head
+while current is not None:
+    print(current.data, end=" <=> ")
+    current = current.next
+
+print("None")
+
+#Output
+
+20 <=> 30 <=> 40 <=> 50 <=> None
+
+__________________________________________________
+
+1. The Block Game
+ 
+t = int(input())
+
+while t > 0:
+    n = input()
+    
+    rev = ""
+    i = len(n) - 1
+
+    while i >= 0:
+        rev += n[i]
+        i -= 1
+
+    if n == rev:
+        print("wins")
+    else:
+        print("loses")
+
+    t -= 1
+
+____________________________________________________
+
+2. Mario and Transformation
+
+t = int(input())
+
+while t > 0:
+    x = int(input())
+
+    if x % 3 == 0:
+        print("NORMAL")
+    elif x % 3 == 1:
+        print("HUGE")
+    else:
+        print("SMALL")
+
+    t -= 1
+
+____________________________________________________
+
+3. Simple Sorting - TSORT
+
+n = int(input())
+
+arr = []
+
+for i in range(n):
+    arr.append(int(input()))
+
+arr.sort()
+
+for num in arr:
+    print(num)
+
+_____________________________________________________
+
+4. Distinct Codes - DISTCODE
+
+t = int(input())
+
+while t > 0:
+    s = input().strip()
+
+    st = set()
+
+    for i in range(len(s) - 1):
+        st.add(s[i:i + 2])
+
+    print(len(st))
+    t -= 1
+
+______________________________________________________
+
+5. Wordle
+
+t = int(input())
+while t > 0:
+    s = input().strip()
+    g = input().strip()
+
+    ans = ""
+
+    for i in range(5):
+        if s[i] == g[i]:
+            ans += "G"
+        else:
+            ans += "B"
+
+    print(ans)
+    t -= 1
+
+______________________________________________________
+
+6. Can You Eat It - COMPCAND
+
+t = int(input())
+
+while t > 0:
+    n, k = map(int, input().split())
+
+    if n % k == 0:
+        print(n // k)
+    else:
+        print(-1)
+
+    t -= 1
+
+_______________________________________________________
+
+7. Bus Seat Numbering - SEATNUMBER
+
+t = int(input())
+
+while t > 0:
+    n = int(input())
+
+    if n <= 15:
+        if n <= 10:
+            print("Lower Double")
+        else:
+            print("Lower Single")
+    else:
+        pos = n - 15
+
+        if pos <= 10:
+            print("Upper Double")
+        else:
+            print("Upper Single")
+
+    t -= 1
+
+________________________________________________________
+
+8. Coins And Triangle
+
+import math
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    h = int((math.sqrt(1 + 8 * n) - 1) // 2)
+    print(h)
+
+________________________________________________________
+
+9. Compress the Video
+
+t = int(input())
+
+while t:
+    n = int(input())
+    a = list(map(int, input().split()))
+
+    ans = 1
+
+    i = 1
+    while i < n:
+        if a[i] != a[i - 1]:
+            ans += 1
+        i += 1
+
+    print(ans)
+    t -= 1
+
+_________________________________________________________
+
+10. Group Assignment - GROUPASSGN
+
+t = int(input())
+
+while t > 0:
+    n, x = map(int, input().split())
+    print(2 * n + 1 - x)
+    t -= 1
+
+_________________________________________________________
+
+11. Group Assignment - GRPASSN
+
+t = int(input())
+
+while t > 0:
+    n = int(input())
+    p = list(map(int, input().split()))
+
+    freq = {}
+
+    for x in p:
+        freq[x] = freq.get(x, 0) + 1
+
+    possible = True
+
+    for k in freq:
+        if freq[k] % k != 0:
+            possible = False
+            break
+
+    if possible:
+        print("YES")
+    else:
+        print("NO")
+
+    t -= 1
+
+_________________________________________________________
+
+12. Sugar Limit - SULIM
+
+t = int(input())
+
+while t > 0:
+    n = int(input())
+    a = list(map(int, input().split()))
+    b = list(map(int, input().split()))
+
+    ans = 0
+
+    for L in range(101):
+        total = 0
+
+        for i in range(n):
+            if b[i] <= L and a[i] > 0:
+                total += a[i]
+
+        ans = max(ans, total - L)
+
+    print(ans)
+    t -= 1
+
+___________________________________________________________
+
+13. 50-50 Rule - NGRS
+
+t = int(input())
+
+for _ in range(t):
+    x, y = map(int, input().split())
+
+    if x < 50:
+        print("Z")
+    elif y < 50:
+        print("F")
+    else:
+        print("A")
+
+__________________________________________________________
+
+14. The Last Levels
+
+t = int(input())
+
+for _ in range(t):
+    x, y, z = map(int, input().split())
+
+    breaks = (x - 1) // 3
+    total_time = x * y + breaks * z
+
+    print(total_time)
+
+__________________________________________________________
+
+15. Problem Reviews
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    scores = list(map(int, input().split()))
+
+    good = True
+
+    for score in scores:
+        if score <= 4:
+            good = False
+            break
+
+    if good:
+        print("YES")
+    else:
+        print("NO")
+
+__________________________________________________________
+
+16. Elections in Chefland - ELECTN
+
+t = int(input())
+
+for _ in range(t):
+    n, x = map(int, input().split())
+    ages = list(map(int, input().split()))
+
+    count = 0
+
+    for age in ages:
+        if age >= x:
+            count += 1
+
+    print(count)
+
+_________________________________________________________
+
+17. Spoon in Matrix
+
+t = int(input())
+
+for _ in range(t):
+    r, c = map(int, input().split())
+
+    matrix = []
+    found = False
+
+    for _ in range(r):
+        matrix.append(input().lower())
+
+    # Check rows
+    for row in matrix:
+        if "spoon" in row:
+            found = True
+            break
+
+    # Check columns if not found in rows
+    if not found:
+        for col in range(c):
+            column = ""
+            for row in range(r):
+                column += matrix[row][col]
+
+            if "spoon" in column:
+                found = True
+                break
+
+    if found:
+        print("There is a spoon!")
+    else:
+        print("There is indeed no spoon!")
+
+_________________________________________________________
+
+18. Netflix
+
+T = int(input())
+
+for i in range(T):
+    A, B, C, X = map(int, input().split())
+    if (A + B >= X) or (A + C >= X) or (B + C >= X):
+        print("YES")
+    else:
+        print("NO")
+
+__________________________________________________________
+
+19. SEVENRINGS - 7 Rings
+
+t = int(input())
+
+while t > 0:
+    n, x = map(int, input().split())
+    total_bill = n * x
+
+    if 10000 <= total_bill <= 99999:
+        print("YES")
+    else:
+        print("NO")
+    t -= 1
+
+__________________________________________________________
+
+20. RCB vs CSK 
+
+X, Y = map(int, input().split())
+if X - Y >= 18:
+    print("RCB")
+else:
+    print("CSK")
+
+___________________________________________________________
+
+21. Economics Class - eco class
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+
+    s = list(map(int, input().split()))
+    d = list(map(int, input().split()))
+
+    count = 0
+
+    for i in range(n):
+        if s[i] == d[i]:
+            count += 1
+
+    print(count)
+
+___________________________________________________________
+
+22. indivisible - INDIVISIBLE
+
+t = int(input())
+
+for _ in range(t):
+    a, b, c = map(int, input().split())
+
+    k = 2
+    while k < 100:
+        if a % k != 0 and b % k != 0 and c % k != 0:
+            print(k)
+            break
+        k += 1
+
+__________________________________________________________
+
+23. Chef and Price Control - pricecon
+
+t = int(input())
+
+for _ in range(t):
+    n, k = map(int, input().split())
+    p = list(map(int, input().split()))
+
+    loss = 0
+
+    for price in p:
+        if price > k:
+            loss += price - k
+
+    print(loss)
+
+__________________________________________________________
+
+24. No Time to Wait - notime
+
+n, h, x = map(int, input().split())
+t = list(map(int, input().split()))
+
+ans = "NO"
+
+for i in t:
+    if x + i >= h:
+        ans = "YES"
+        break
+
+print(ans)
+
+________________________________________________________
+
+25. No Winner
+
+t = int(input())
+
+for _ in range(t):
+    A, B, C, M = map(int, input().split())
+
+    possible = False
+
+    for x in range(M + 1):
+        for y in range(M - x + 1):
+            z = M - x - y
+
+            a = A + x
+            b = B + y
+            c = C + z
+
+            if a == b or b == c or a == c:
+                possible = True
+                break
+
+        if possible:
+            break
+
+    print("YES" if possible else "NO")
+
+______________________________________________________
+
+26. Akash and Missing Class - chfclass
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+
+    ans = n // 7
+
+    if n % 7 >= 6:
+        ans += 1
+
+    print(ans)
+
+
+_____________________________________________________
+
+27. Money Double
+
+t = int(input())
+
+for _ in range(t):
+    x, y = map(int, input().split())
+
+    for _ in range(y):
+        if x < 1000:
+            x += 1000
+        else:
+            x *= 2
+
+    print(x)
+
+______________________________________________________
+
+28. Packing Books - BookPack
+
+t = int(input())
+
+for _ in range(t):
+    x, y, z = map(int, input().split())
+
+    boxes_per_shelf = (y + z - 1) // z
+    print(x * boxes_per_shelf)
+
+_____________________________________________________
