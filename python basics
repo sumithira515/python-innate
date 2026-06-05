@@ -1,0 +1,988 @@
+1. Accept a user's name and print a welcome message
+
+name = input("Enter your name: ")
+print("Welcome", name)
+
+Output:
+
+Enter your name: Ravi
+Welcome Ravi
+
+2. Accept two numbers and display their sum
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print("Sum =", a + b)
+
+Output:
+
+Enter first number: 10
+Enter second number: 20
+Sum = 30
+
+3. Accept a student's name and marks and display them
+
+name = input("Enter student name: ")
+marks = int(input("Enter marks: "))
+print("Student Name:", name)
+print("Marks:", marks)
+
+Output:
+
+Enter student name: Ravi
+Enter marks: 85
+Student Name: Ravi
+Marks: 85
+
+
+4. Accept a city name and print it in uppercase
+
+city = input("Enter city name: ")
+print("Uppercase:", city.upper())
+
+Output:
+
+Enter city name: Chennai
+Uppercase: CHENNAI
+
+5. Take input for length and breadth and calculate area
+
+length = int(input("Enter length: "))
+breadth = int(input("Enter breadth: "))
+area = length * breadth
+print("Area =", area)
+
+Output:
+
+Enter length: 10
+Enter breadth: 5
+Area = 50
+
+ 6. Assign multiple values to multiple variables
+
+a, b, c = 10, 20, 30
+
+print(a)
+print(b)
+print(c)
+
+Output:
+
+10
+20
+30
+
+ 7. Assign the same value to three variables
+
+a = b = c = 100
+
+print(a)
+print(b)
+print(c)
+
+Output:
+
+100
+100
+100
+
+8. Exchange values of two variables
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+a, b = b, a
+print("After swapping:")
+print("a =", a)
+print("b =", b)
+
+Output:
+
+Enter first number: 10
+Enter second number: 20
+After swapping:
+a = 20
+b = 10
+
+9. Calculate total marks using variables
+
+m1 = int(input("Enter mark 1: "))
+m2 = int(input("Enter mark 2: "))
+m3 = int(input("Enter mark 3: "))
+total = m1 + m2 + m3
+print("Total Marks =", total)
+
+Output:
+
+Enter mark 1: 80
+Enter mark 2: 75
+Enter mark 3: 90
+Total Marks = 245
+
+10. Store and display employee information
+
+name = input("Enter employee name: ")
+age = int(input("Enter age: "))
+salary = int(input("Enter salary: "))
+print("Name:", name)
+print("Age:", age)
+print("Salary:", salary)
+
+Output:
+
+Enter employee name: Ravi
+Enter age: 25
+Enter salary: 30000
+Name: Ravi
+Age: 25
+Salary: 30000
+
+11. Create a string and print it
+
+s = "Hello Python"
+print(s)
+
+Output:
+
+Hello Python
+
+12. Print the first character of a string
+
+s = input("Enter a string: ")
+print("First character:", s[0])
+
+Output:
+
+Enter a string: Python
+First character: P
+
+13. Print the last character of a string
+
+s = input("Enter a string: ")
+print("Last character:", s[-1])
+
+Output:
+
+Enter a string: Python
+Last character: n
+
+14. Find the length of a string
+
+s = input("Enter a string: ")
+print("Length =", len(s))
+
+Output:
+
+Enter a string: Python
+Length = 6
+
+15. Convert a string to uppercase
+
+s = input("Enter a string: ")
+print(s.upper())
+
+Output:
+
+Enter a string: python
+PYTHON
+
+16. Convert a string to lowercase
+
+s = input("Enter a string: ")
+print(s.lower())
+
+Output:
+
+Enter a string: PYTHON
+python
+
+17. Reverse a string
+
+s = input("Enter a string: ")
+print("Reverse:", s[::-1])
+
+Output:
+
+Enter a string: Python
+Reverse: nohtyP
+
+18. Check whether a character exists in a string
+
+s = input("Enter a string: ")
+ch = input("Enter a character: ")
+if ch in s:
+    print("Character found")
+else:
+    print("Character not found")
+
+Output:
+
+Enter a string: Python
+Enter a character: t
+Character found
+
+19. Count vowels in a string
+
+s = input("Enter a string: ")
+
+count = 0
+
+for i in s:
+    if i in "aeiouAEIOU":
+        count += 1
+
+print("Vowels =", count)
+
+Output:
+
+Enter a string: Education
+Vowels = 5
+
+20. Add two integers
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+print("Sum =", a + b)
+
+
+Output:
+
+Enter first number: 10
+Enter second number: 20
+Sum = 30
+
+21.Multiply two floating-point numbers
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+print("Product =", a * b)
+
+Output:
+
+Enter first number: 2.5
+Enter second number: 4
+Product = 10.0
+
+22.Calculate simple interest.
+
+p = float(input("Enter Principal: "))
+r = float(input("Enter Rate: "))
+t = float(input("Enter Time: "))
+si = (p * r * t) / 100
+print("Simple Interest =", si)
+
+Output:
+Enter Principal: 10000
+Enter Rate: 5
+Enter Time: 2
+Simple Interest = 1000.0
+
+23.Find the square and cube of a number.
+
+n = int(input("Enter a number: "))
+print("Square =", n ** 2)
+print("Cube =", n ** 3)
+
+Output:
+Enter a number: 5
+Square = 25
+Cube = 125
+
+24.Calculate the average of three numbers.
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+avg = (a + b + c) / 3
+print("Average =", avg)
+
+Output:
+Enter first number: 10
+Enter second number: 20
+Enter third number: 30
+Average = 20.0
+
+25.Perform arithmetic operations on two numbers.
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+print("Addition =", a + b)
+print("Subtraction =", a - b)
+print("Multiplication =", a * b)
+print("Division =", a / b)
+
+Output:
+Enter first number: 20
+Enter second number: 5
+Addition = 25
+Subtraction = 15
+Multiplication = 100
+Division = 4.0
+
+26.Create and display a complex number.
+
+real = int(input("Enter real part: "))
+imag = int(input("Enter imaginary part: "))
+c = complex(real, imag)
+print("Complex Number =", c)
+
+Output:
+Enter real part: 3
+Enter imaginary part: 4
+Complex Number = (3+4j)
+
+27.Find the largest of three numbers.
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+
+largest = max(a, b, c)
+
+print("Largest =", largest)
+
+Output:
+Enter first number: 10
+Enter second number: 30
+Enter third number: 20
+Largest = 30
+
+28.Create a list of 5 numbers.
+
+numbers = []
+
+for i in range(5):
+    num = int(input("Enter number: "))
+    numbers.append(num)
+print(numbers)
+
+Output:
+Enter number: 10
+Enter number: 20
+Enter number: 30
+Enter number: 40
+Enter number: 50
+[10, 20, 30, 40, 50]
+
+29.Print the first and last elements.
+
+numbers = [10, 20, 30, 40, 50]
+
+print("First Element =", numbers[0])
+print("Last Element =", numbers[-1])
+
+Output:
+First Element = 10
+Last Element = 50
+
+30.Add a new element to the list.
+
+numbers = [10, 20, 30]
+num = int(input("Enter new element: "))
+numbers.append(num)
+print(numbers)
+
+Output:
+Enter new element: 40
+[10, 20, 30, 40]
+
+31.Remove an element from the list.
+
+numbers = [10, 20, 30, 40]
+num = int(input("Enter element to remove: "))
+numbers.remove(num)
+print(numbers)
+
+Output:
+Enter element to remove: 20
+[10, 30, 40]
+
+32.Find the length of the list.
+
+numbers = [10, 20, 30, 40, 50]
+print("Length =", len(numbers))
+
+Output:
+Length = 5
+
+33.Create a set of numbers.
+
+s = {1, 2, 3, 4, 5}
+print(s)
+
+Output
+{1, 2, 3, 4, 5}
+
+34.Add an element to a set.
+
+s = {1, 2, 3}
+num = int(input("Enter element: "))
+s.add(num)
+print(s)
+
+Output
+Enter element: 4
+{1, 2, 3, 4}
+
+35.Remove an element from a set.
+
+s = {1, 2, 3, 4}
+num = int(input("Enter element to remove: "))
+s.remove(num)
+print(s)
+
+Output:
+Enter element to remove: 2
+{1, 3, 4}
+
+36.Create Boolean variables with True and False.
+
+a = True
+b = False
+print("a =", a)
+print("b =", b)
+
+Output:
+a = True
+b = False
+
+37.Check whether a number is positive.
+
+n = int(input("Enter a number: "))
+if n > 0:
+    print("Positive Number")
+else:
+    print("Not Positive")
+
+Output:
+Enter a number: 25
+Positive Number
+
+38.Check whether a number is even.
+
+n = int(input("Enter a number: "))
+if n % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")
+
+Output:
+Enter a number: 8
+Even Number
+
+39.Student Mark Calculator
+
+m1 = int(input("Enter Mark1: "))
+m2 = int(input("Enter Mark2: "))
+m3 = int(input("Enter Mark3: "))
+total = m1 + m2 + m3
+avg = total / 3
+print("Total =", total)
+print("Average =", avg)
+
+Output:
+Enter Mark1: 80
+Enter Mark2: 70
+Enter Mark3: 90
+Total = 240
+Average = 80.0
+
+40.BMI Calculator
+
+weight = float(input("Enter weight in kg: "))
+height = float(input("Enter height in meters: "))
+bmi = weight / (height ** 2)
+print("BMI =", bmi)
+
+Output:
+Enter weight in kg: 60
+Enter height in meters: 1.5
+BMI = 26.666666666666668
+
+41. Temperature Converter
+
+Celsius to Fahrenheit:
+celsius = float(input("Enter temperature in Celsius: "))
+fahrenheit = (celsius * 9/5) + 32
+
+print("Temperature in Fahrenheit =", fahrenheit)
+
+Output:
+Enter temperature in Celsius: 25
+Temperature in Fahrenheit = 77.0
+
+Fahrenheit to Celsius:
+fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+celsius = (fahrenheit - 32) * 5/9
+
+print("Temperature in Celsius =", celsius)
+
+Output:
+Enter temperature in Fahrenheit: 77
+Temperature in Celsius = 25.0
+
+42. currency converter
+
+amount = float(input("Enter amount in INR: "))
+
+usd = amount / 85   # Example: 1 USD = 85 INR
+
+print("Amount in USD =", round(usd, 2))
+
+Output:
+Enter amount in INR: 850
+Amount in USD = 10.0
+
+43.Write a program to calculate the sum, difference, product, quotient, and remainder of two number
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+sum = num1 + num2
+difference = num1 - num2
+product = num1 * num2
+quotient = num1 / num2
+remainder = num1 % num2
+
+print("Sum =", sum)
+print("Difference =", difference)
+print("Product =", product)
+print("Quotient =", quotient)
+print("Remainder =", remainder)
+
+Output:
+Enter first number: 10
+Enter second number: 3
+Sum = 13
+Difference = 7
+Product = 30
+Quotient = 3.3333333333333335
+Remainder = 1
+
+44. Find the area and perimeter of a rectangle using arithmetic operators
+
+length = float(input("Enter length: "))
+breadth = float(input("Enter breadth: "))
+
+area = length * breadth
+perimeter = 2 * (length + breadth)
+
+print("Area of rectangle =", area)
+print("Perimeter of rectangle =", perimeter)
+
+Output:
+Enter length: 10
+Enter breadth: 5
+Area of rectangle = 50.0
+Perimeter of rectangle = 30.0
+
+45. Calculate the simple interest for given principal, rate, and time
+
+principal = float(input("Enter principal amount: "))
+rate = float(input("Enter rate of interest: "))
+time = float(input("Enter time (in years): "))
+
+simple_interest = (principal * rate * time) / 100
+
+print("Simple Interest =", simple_interest)
+
+Output:
+Enter principal amount: 10000
+Enter rate of interest: 5
+Enter time (in years): 2
+Simple Interest = 1000.0
+
+46. Initialize a variable with 100 and apply all assignment operators (+=, -=, *=, /=, %=)
+
+num = 100
+
+print("Initial value =", num)
+
+num += 20
+print("After += 20 :", num)
+
+num -= 10
+print("After -= 10 :", num)
+
+num *= 2
+print("After *= 2 :", num)
+
+num /= 5
+print("After /= 5 :", num)
+
+num %= 7
+print("After %= 7 :", num)
+
+Output:
+Initial value = 100
+After += 20 : 120
+After -= 10 : 110
+After *= 2 : 220
+After /= 5 : 44.0
+After %= 7 : 2.0
+
+47. Calculate the total marks of a student using assignment operators
+
+total = 0
+
+mark1 = int(input("Enter mark 1: "))
+mark2 = int(input("Enter mark 2: "))
+mark3 = int(input("Enter mark 3: "))
+
+total += mark1
+total += mark2
+total += mark3
+
+print("Total Marks =", total)
+
+Output:
+Enter mark 1: 85
+Enter mark 2: 90
+Enter mark 3: 88
+Total Marks = 263
+
+48. Update a bank account balance after deposits and withdrawals
+
+balance = float(input("Enter initial balance: "))
+
+deposit = float(input("Enter deposit amount: "))
+balance += deposit
+
+withdraw = float(input("Enter withdrawal amount: "))
+balance -= withdraw
+
+print("Updated Balance =", balance)
+
+Output:
+Enter initial balance: 5000
+Enter deposit amount: 1000
+Enter withdrawal amount: 500
+Updated Balance = 5500.0
+
+49. Use assignment operators to calculate the total cost of items in a shopping cart
+
+total_cost = 0
+
+item1 = float(input("Enter price of item 1: "))
+item2 = float(input("Enter price of item 2: "))
+item3 = float(input("Enter price of item 3: "))
+
+total_cost += item1
+total_cost += item2
+total_cost += item3
+
+print("Total Cost =", total_cost)
+
+Output:
+Enter price of item 1: 100
+Enter price of item 2: 250
+Enter price of item 3: 150
+Total Cost = 500.0
+
+50. Compare two numbers and display all relational operator results
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+print("num1 == num2 :", num1 == num2)
+print("num1 != num2 :", num1 != num2)
+print("num1 > num2  :", num1 > num2)
+print("num1 < num2  :", num1 < num2)
+print("num1 >= num2 :", num1 >= num2)
+print("num1 <= num2 :", num1 <= num2)
+
+Output:
+Enter first number: 10
+Enter second number: 20
+num1 == num2 : False
+num1 != num2 : True
+num1 > num2  : False
+num1 < num2  : True
+num1 >= num2 : False
+num1 <= num2 : True
+
+51.Check whether two entered numbers are equal.
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+if a == b:
+    print("Both numbers are equal")
+else:
+    print("Both numbers are not equal")
+
+output:
+
+Enter first number:10
+Enter second number:10
+Both numbers are equal
+
+52.Determine whether a person is eligible to vote based on age.
+
+age = int(input("Enter your age: "))
+
+if age >= 18:
+    print("Eligible to vote")
+else:
+    print("Not eligible to vote")
+
+
+output:
+
+Enter your age:20
+Eligible to vote
+
+Enter your age:17
+Not eligible to vote
+
+
+53.Check if a student is eligible for placement (CGPA > 7 and no arrears).
+
+cgpa = float(input("Enter CGPA: "))
+arrears = int(input("Enter number of arrears: "))
+
+if cgpa > 7 and arrears == 0:
+    print("Eligible for Placement")
+else:
+    print("Not Eligible for Placement")
+
+output:
+
+8.2
+0
+Eligible for Placement
+
+7.5
+2
+Not Eligible for Placement
+
+54.Determine if a user can log in using username and password validation.
+
+correct_username = "admin"
+correct_password = "12345"
+
+username = input("Enter username: ")
+password = input("Enter password: ")
+
+if username == correct_username and password == correct_password:
+    print("Login Successful")
+else:
+    print("Invalid Username or Password")
+
+output:
+
+Enter username:admin
+Enter password:12345
+Login successful
+
+Enter username:admin
+Enter password:11111
+Invalid Username or Password
+
+55.Check whether a year is a leap year and divisible by 100.
+
+year = int(input("Enter a year: "))
+
+if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+    print("Leap Year")
+else:
+    print("Not a Leap Year")
+
+if year % 100 == 0:
+    print("Divisible by 100")
+else:
+    print("Not Divisible by 100")
+
+
+output:
+  
+Enter a year:2000
+Leap Year
+Divisible by 100
+
+
+56.Perform bitwise AND, OR, XOR on two numbers.
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+print("Bitwise AND =", a & b)
+print("Bitwise OR  =", a | b)
+print("Bitwise XOR =", a ^ b)
+
+
+output:
+
+Enter first number:5
+Enter second number:3
+Bitwise AND = 1
+Bitwise OR  = 7
+Bitwise XOR = 6
+
+57.Find the bitwise complement of a number.
+
+num = int(input("Enter a number: "))
+
+complement = ~num
+
+print("Bitwise Complement =", complement)
+
+output:
+
+Enter a number:5
+Bitwise Complement = -6
+
+58.Check whether a character exists in a string
+
+string = input("Enter a string: ")
+char = input("Enter a character: ")
+
+if char in string:
+    print("Character exists in the string")
+else:
+    print("Character does not exist in the string")
+
+output:
+
+Enter string:hello
+Enter a character:e
+Character exists in the string
+
+Enter string:hello
+Enter a charcter:z
+
+59.Check whether a number exists in a list.
+
+numbers = [10, 20, 30, 40, 50]
+
+num = int(input("Enter a number to search: "))
+
+if num in numbers:
+    print("Number exists in the list")
+else:
+    print("Number does not exist in the list")
+
+output:
+
+Enter a number to search:30
+Number exists in the list
+
+Enter a number to search:60
+number does not exist in the list
+
+60.Verify whether a key exists in a dictionary.
+
+student = {
+    "name": "John",
+    "age": 20,
+    "course": "Python"
+}
+
+key = input("Enter the key to search: ")
+
+if key in student:
+    print("Key exists in the dictionary")
+else:
+    print("Key does not exist in the dictionary")
+
+
+output:
+
+Enter the key to search:age
+Key exists in the dictionary
+
+Enter the key to search:address
+Key does not exists in the dictionary
+
+61. Compare two lists using `is` and `==`
+list1 = [1, 2, 3]
+list2 = [1, 2, 3]
+print("list1 == list2:", list1 == list2)
+print("list1 is list2:", list1 is list2)
+
+Output:
+list1 == list2: True
+list1 is list2: False
+
+
+62. Check whether two variables refer to the same object
+a = [10, 20, 30]
+b = a
+c = [10, 20, 30]
+print("a is b:", a is b)
+print("a is c:", a is c)
+print("id(a):", id(a))
+print("id(b):", id(b))
+print("id(c):", id(c))
+
+Output:
+a is b: True
+a is c: False
+id(a): 140234567890432
+id(b): 140234567890432
+id(c): 140234567890560
+
+
+63. Demonstrate the difference between `is` and `==`
+x = 5
+y = 5
+m = [1, 2]
+n = [1, 2]
+print("x == y:", x == y)
+print("x is y:", x is y)
+print("m == n:", m == n)
+print("m is n:", m is n)
+
+Output:
+x == y: True
+x is y: True
+m == n: True
+m is n: False
+
+
+64. Check whether a number is positive or negative
+n = int(input("Enter number: "))
+if n > 0:
+    print("Positive")
+elif n < 0:
+    print("Negative")
+else:
+    print("Zero")
+
+Output:
+Enter number: -7
+Negative
+
+65. Find whether a year is a leap year or not
+year = int(input("Enter year: "))
+if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+    print(year, "is a Leap Year")
+else:
+    print(year, "is Not a Leap Year")
+
+Output:
+Enter year: 2024
+2024 is a Leap Year
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
